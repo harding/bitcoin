@@ -25,15 +25,17 @@ knows when upgrading to current and future Tor releases that support Tor v3 only
 The first step is running Bitcoin Core behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
 
+<pre>
     -proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
                     server will be used to try to reach .onion addresses as well.
                     You need to use -noonion or -onion=0 to explicitly disable
                     outbound access to onion services.
 
+
     -onion=ip:port  Set the proxy server to use for Tor onion services. You do not
                     need to set this if it's the same as -proxy. You can use -onion=0
                     to explicitly disable access to onion services.
-                    Note: Only the -proxy option sets the proxy for DNS requests;
+                    <b>Note:</b> Only the -proxy option sets the proxy for DNS requests;
                     with -onion they will not route over Tor, so use -proxy if you
                     have privacy concerns.
 
@@ -54,6 +56,7 @@ outgoing connections, but more is possible.
                     connections will be enabled when you use -proxy or -onion. Use
                     -noonion or -onion=0 if you want to be sure there are no outbound
                     onion connections over the default proxy or your defined -proxy.
+</pre>
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
